@@ -10,7 +10,7 @@
             "flecs.systems.civetweb",
             "flecs.os_api.bake"
         ],
-        "use-bundle": ["flecs-hub:default"]
+        "use-bundle": ["flecs.hub:default"]
     },
     "bundle": {
         "repositories": {
