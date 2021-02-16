@@ -36,9 +36,9 @@ Vue.component('docs', {
             Human    <span class="code-comment">// store instances of 'Human' in '.'</span><br/>
             Human(.) <span class="code-comment">// same as above</span><br/>
             Human(X) <span class="code-comment">// store instances of 'Human' in 'X'</span><br/>
-            Friend(Luke, X) <span class="code-comment">// store friends of Luke in 'X'</span><br/>
-            Friend(Luke, X), Jedi(X) <span class="code-comment">// store all friends of Luke that are Jedis in 'X'</span>
-            Friend(X, Y) <span class="code-comment">// store all friends in 'X' and 'Y'</span><br/>
+            Friends(Luke, X) <span class="code-comment">// store friends of Luke in 'X'</span><br/>
+            Friends(Luke, X), Jedi(X) <span class="code-comment">// store all friends of Luke that are Jedis in 'X'</span>
+            Friends(X, Y) <span class="code-comment">// store all friends in 'X' and 'Y'</span><br/>
             Jedi(Luke) <span class="code-comment">// return true if Luke is a Jedi</span><br/>
         </p>
         <p>
