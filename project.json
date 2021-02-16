@@ -1,0 +1,20 @@
+{
+    "id": "query_server",
+    "type": "application",
+    "value": {
+        "author": "Jane Doe",
+        "description": "A simple hello world flecs application",
+        "use": [
+            "flecs",
+            "flecs.components.http",
+            "flecs.systems.civetweb",
+            "flecs.os_api.bake"
+        ],
+        "use-bundle": ["flecs-hub:default"]
+    },
+    "bundle": {
+        "repositories": {
+            "flecs.hub": "https://github.com/flecs-hub/flecs-hub"
+        }
+    }
+}

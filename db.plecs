@@ -1,0 +1,591 @@
+
+Transitive(IsA)
+
+IsA(Movie, Thing)
+
+IsA(Person, Thing)
+
+IsA(Actor, Person)
+IsA(Character, Person)
+
+IsA(CelestialBody, Thing)
+
+IsA(Planet, CelestialBody)
+IsA(Moon, CelestialBody)
+
+IsA(CelestialBody, Location)
+IsA(SpaceStation, Location)
+
+IsA(Machine, Thing)
+
+IsA(Vehicle, Machine)
+IsA(Transport, Vehicle)
+IsA(SpaceShip, Transport)
+IsA(Walker, Transport)
+
+IsA(Animal, Thing)
+IsA(Creature, Animal)
+IsA(Wookie, Creature)
+IsA(Ewok, Creature)
+IsA(Human, Animal)
+
+IsA(Male, Gender)
+IsA(Female, Gender)
+
+IsA(Rebellion, Faction)
+IsA(FirstOrder, Faction)
+IsA(Empire, Faction)
+IsA(GalacticRepublic, Faction)
+
+IsA(Soldier, Occupation)
+IsA(StormTrooper, Soldier)
+IsA(Pilot, Occupation)
+
+IsA(Droid, Machine)
+IsA(ProtocolDroid, Droid)
+
+(IsA, SpaceShip) {
+  CorellianLightFreigher
+  (Faction, Rebellion) {
+    XWing
+    YWing
+  }
+  (Faction, Empire) {
+    ImperialShuttle
+    TieFighter
+    Destroyer
+  }
+}
+
+(IsA, Walker) {
+  (Faction, Empire) {
+    AtAt
+    AtRt
+    AtDp
+    AtSt
+  }
+}
+
+(Movie) {
+  ANewHope
+  TheEmpireStrikesBack
+  ReturnOfTheJedi
+  ThePhantomMenace
+  AttackOfTheClones
+  RevengeOfTheSith
+  TheForceAwakens
+  TheLastJedi
+  TheRiseOfSkywalker
+}
+
+(Planet) {
+  Tatooine
+  Coruscant
+  Dagobah
+  Mustafar
+  Alderaan
+  Hoth
+  Naboo
+  Kashyyyk
+  Kamino
+  Bespin
+  Exegol
+}
+
+(Moon) {
+  Endor
+}
+
+(Sentient) {
+  Human
+  Droid
+}
+
+(CorellianLightFreigher) {
+  (Faction, Rebellion) {
+    MilleniumFalcon
+  }
+}
+
+(SpaceStation) {
+  (Faction, Empire) {
+    DeathStarMk1
+    DeathStarMk2
+    StarKillerBase
+  }
+}
+
+(Human) {
+  (Character) {
+    (Male) {
+      (Family, Skywalker) {
+        Luke
+        Anakin
+      }
+
+      (Family, Solo) {
+        Han
+        Ben
+      }
+
+      (Family, Kenobi) {
+        ObiWan
+      }
+
+      (Family, Organa) {
+        Bail
+      }
+
+      (Family, Palpatine) {
+        Sheev
+      }
+
+      (Family, Jinn) {
+        QuiGon
+      }
+
+      (Family, Windu) {
+        Mace
+      }
+
+      (Family, Fett) {
+        Boba
+        Jango
+      }
+
+      (Family, Calrissian) {
+        Lando
+      }
+
+      (Family, Dameron) {
+        Poe
+      }
+
+      (Family, Ren) {
+        Kylo
+      }
+
+      Dooku
+      Snoke
+      DarthSidious
+      DarthVader
+      DarthMaul
+      Hux
+      Finn
+    }
+
+    (Female) {
+      (Family, Organa) {
+        Leia
+      }
+
+      (Family, Skywalker) {
+        Shmi
+        (Family, Palpatine) {
+          Rey
+        }
+      }
+
+      (Family, Amidala) {
+        Padme
+      }
+
+      (Family, Organa) {
+        Breha
+      }    
+      
+      (Family, Mothma) {
+        Mon
+      }
+
+      (Family, Tico) {
+        Rose
+      }
+
+      (Family, Holdo) {
+        Amilyn
+      }
+
+      (Family, Kanata) {
+        Maz
+      }
+    }
+  }
+}
+
+(Droid) {
+  R2D2
+  BB8
+  (Male) {
+    (ProtocolDroid) {
+      C3PO
+    }
+    Grievous
+  }
+}
+
+(Creature) {
+  (Male) {
+    Yoda
+    (Family, Hutt) {
+      Jabba
+    }
+  }
+}
+
+(Wookie) {
+  Chewbacca
+}
+
+(Jedi) {
+  Yoda
+  Luke
+  Leia
+  Rey
+  Mace
+  QuiGon
+  Anakin
+  ObiWan
+}
+
+(Sith) {
+  DarthVader
+  DarthMaul
+  DarthSidious
+  Dooku
+  Snoke
+}
+
+(Likes, Han) {
+  Leia
+}
+
+(Likes, Leia) {
+  Han
+}
+
+(Likes, Finn) {
+  Rose
+}
+
+(Likes, Rey) {
+  Finn
+}
+
+(Likes, Anakin) {
+  Padme
+}
+
+(Likes, Padme) {
+  Anakin
+}
+
+(Likes, Ben) {
+  Rey
+}
+
+(Likes, Rey) {
+  Ben
+}
+
+(Parent, Shmi) {
+  Anakin
+}
+
+(Parent, Anakin) {
+  (Parent, DarthVader) {
+    Luke,
+    Leia
+  }
+}
+
+(Parent, Han) {
+(Parent, Leia) {
+  Ben
+}
+}
+
+(Becomes, DarthVader) {
+  Anakin
+}
+
+(Becomes, DarthSidious) {
+  Sheev
+}
+
+(Becomes, Kylo) {
+  Ben
+}
+
+(LivedOn, Tatooine) {
+  ObiWan
+  Luke,
+  Rey,
+  BB8,
+  Anakin
+}
+
+(LivedOn, Bespin) {
+  Lando
+}
+
+(LivedOn, Exegol) {
+  DarthSidious
+  Snoke
+}
+
+(LivedOn, Dagobah) {
+  Yoda
+}
+
+(LivedOn, Alderaan) {
+  Leia
+  Bail
+  Breha
+}
+
+(LivedOn, Stewjon) {
+  ObiWan
+}
+
+(LivedOn, Kashyyyk) {
+  Chewbacca
+}
+
+(LivedOn, Mustafar) {
+  DarthVader
+}
+
+(Owns, MilleniumFalcon) {
+  Han
+}
+
+(LivedOn, MilleniumFalcon) {
+  Han
+  Chewbacca
+}
+
+(Faction, Rebellion) {
+  Yoda
+  Luke
+  Leia
+  Rey
+  Han
+  Chewbacca
+  R2D2
+  C3PO
+  BB8
+  MilleniumFalcon
+  Finn
+  Mon
+  Rose
+  ObiWan
+  Maz
+}
+
+(Faction, Empire) {
+  DarthSidious
+  DarthVader
+  DeathStar
+  Dooku
+  StarKillerBase
+  Grievous
+}
+
+(Faction, FirstOrder) {
+  Kylo
+  Hux
+  Snoke
+}
+
+AtWar(Rebellion, Empire)
+AtWar(Rebellion, FirstOrder)
+AtWar(Empire, Rebellion)
+
+Kills(DarthVader, Padme)
+Kills(DarthVader, DarthSidious)
+Kills(Anakin, Dooku)
+Kills(DarthSidious, Kylo)
+Kills(DarthSidious, Mace)
+Kills(Kylo, Han)
+Kills(Luke, DarthVader)
+Kills(ObiWan, Grievous)
+Kills(ObiWan, DarthMaul)
+Kills(DarthMaul, QuiGon)
+Kills(Rey, DarthSidious)
+
+Friends(ObiWan, Anakin)
+Friends(Anakin, ObiWan)
+Friends(ObiWan, QuiGon)
+Friends(QuiGon, ObiWan)
+Friends(Luke, Han)
+Friends(Han, Luke)
+Friends(Han, Chewbacca)
+Friends(Chewbacca, Han)
+Friends(R2D2, Luke)
+Friends(Luke, R2D2)
+Friends(R2D2, ObiWan)
+Friends(ObiWan, R2D2)
+Friends(R2D2, C3PO)
+Friends(C3PO, R2D2)
+Friends(Rey, Finn)
+Friends(Finn, Rey)
+Friends(Poe, Finn)
+Friends(Finn, Poe)
+Friends(Rey, BB8)
+Friends(BB8, Rey)
+Friends(Poe, BB8)
+Friends(BB8, Poe)
+Friends(Leia, Holdo)
+Friends(Holdo, Leia)
+Friends(Anakin, Sheev)
+Friends(Sheev, Anakin)
+
+(AppearsOn, ANewHope) {
+  Luke
+  Leia
+  ObiWan
+  Han
+  Chewbacca
+  R2D2
+  C3PO
+  DarthVader
+  Jabba
+  DeathStarMk1
+  MilleniumFalcon
+  XWing
+  Boba
+}
+
+(AppearsOn, TheEmpireStrikesBack) {
+  Luke
+  Leia
+  ObiWan
+  Han
+  Chewbacca
+  R2D2
+  C3PO
+  DarthVader
+  DarthSidious
+  Lando
+  MilleniumFalcon
+  XWing
+}
+
+(AppearsOn, ReturnOfTheJedi) {
+  Luke
+  Leia
+  ObiWan
+  Han
+  Chewbacca
+  R2D2
+  C3PO
+  DarthVader
+  DarthSidious
+  Jabba
+  Lando
+  DeathStarMk2
+  MilleniumFalcon
+  XWing
+  Boba
+}
+
+(AppearsOn, ThePhantomMenace) {
+  Anakin
+  ObiWan
+  QuiGon
+  R2D2
+  C3PO
+  Jabba
+  Padme
+  Sheev
+  Yoda
+  Shmi
+  Mace
+}
+
+(AppearsOn, AttackOfTheClones) {
+  Anakin
+  ObiWan
+  R2D2
+  C3PO
+  Jabba
+  Padme
+  Sheev
+  Yoda
+  Shmi
+  Mace
+  Dooku
+  Jango
+}
+
+(AppearsOn, RevengeOfTheSith) {
+  Anakin
+  ObiWan
+  R2D2
+  C3PO
+  Jabba
+  Padme
+  Sheev
+  DarthSidious
+  DarthVader
+  Yoda
+  Mace
+  Grievous
+  Dooku
+}
+
+(AppearsOn, TheForceAwakens) {
+  Kylo
+  Rey
+  Poe
+  Finn
+  Han
+  Leia
+  Luke
+  Chewbacca
+  Snoke
+  Maz
+  R2D2
+  C3PO
+  Hux
+  StarKillerBase
+  MilleniumFalcon
+  XWing
+}
+
+(AppearsOn, TheLastJedi) {
+  Kylo
+  Rey
+  Poe
+  Finn
+  Han
+  Leia
+  Luke
+  Chewbacca
+  Snoke
+  R2D2
+  C3PO
+  Rose
+  Hux
+  Holdo
+  XWing
+}
+
+(AppearsOn, TheRiseOfSkywalker) {
+  Kylo
+  Rey
+  Poe
+  Finn
+  Han
+  Leia
+  Luke
+  Chewbacca
+  DarthSidious
+  R2D2
+  C3PO
+  Rose
+  Lando
+  Hux
+  XWing
+}
