@@ -26,6 +26,12 @@ var app = new Vue({
     query_on_changed(e) {
       this.query = e.query;
 
+      if (!this.query || !this.query.length) {
+        this.data = undefined;
+        this.error = false;
+        return;
+      }
+
       host = this.host;
       let url = "http://" + this.host + "/query";
       if (this.query && this.query.length) {
@@ -57,7 +63,7 @@ var app = new Vue({
     query: "",
     query_ok: "",
     error: false,
-    data: [],
+    data: undefined,
     entity: undefined
   }
 });

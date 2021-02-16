@@ -19,10 +19,9 @@ Vue.component('query', {
     },
     template: `
       <div class="query">
-          <p><img src="images/flecs.png" height="250px"></p>
           <p>
-            <input ref="input" :class="query_class()" v-on:keyup="on_change" size="60">
-          </input>
+            <input ref="input" :class="query_class()" v-on:keyup="on_change">
+            </input>
           </p>
       </div>
       `

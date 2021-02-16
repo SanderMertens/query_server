@@ -14,22 +14,37 @@ h3 {
 }
 
 input {
-    -webkit-appearance: none; 
-    -moz-appearance: none;
-    border: solid 2px #aaa;
-    outline: none;
-    padding: 5px;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  border: solid 2px #aaa;
+  outline: none;
+  padding: 5px;
 }
 
-div.search_box {
+div.query-box {
   position: relative;
+  width: 100%;
+  max-width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div.result-box {
+  position: relative;
+  top: 60px;
+  clear: both;
+}
+
+div.logo-box {
+  position: relative;
+  clear: both;
+  text-align: center;
+  width: 100%;
 }
 
 div.query {
-  font-size: 20px;
-  margin-bottom: 40px;
-  width: 100%;
-  text-align: center;
+ float: left;
+ width: calc(100% - 95px);
 }
 
 div.query input {
@@ -40,12 +55,15 @@ div.query input {
   color: #fff;
   border-color: #47B576;
   box-shadow: 0px 0px 10px rgba(71,181,118,1.0);
+  width: 100%;
 }
 
 div.example {
   position: relative;
-  top: -78px;
-  left: 350px;
+  top: 12px;
+  left: 5px;
+  float: left;
+
   font-size: 18px;
   font-weight: 300;
   font-family: 'Roboto';
@@ -55,8 +73,6 @@ div.example {
   border-radius: 20px;
   padding: 9px;
   cursor: pointer;
-  width: 100px;
-  margin: auto;
 
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -72,13 +88,39 @@ div.example {
     border-color: #B5494B !important;
 }
 
+div.error {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
 span.error {
   color: #B5494B;
 }
 
-div.ecs-table {
+div.docs {
+  position: relative;
+  text-align: center;
   margin: auto;
-  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+p.code-examples {
+  margin: auto;
+  padding: 10px;
+  text-align: left;
+  background-color: #555;
+  max-width: 700px;
+}
+
+span.code-comment {
+  color: #999;
+  font-style: italic;
+}
+
+div.ecs-table {
+  position: relative;
+  margin: auto;
   padding: 15px;
   box-shadow: 0px 5px 20px rgba(0,0,0,1.0);
   max-width: 800px;

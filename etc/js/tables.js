@@ -3,7 +3,7 @@ Vue.component('tables', {
     props: ['data', 'query'],
     template: `
       <div v-if="data && data.valid" class="ecs-table">    
-        <div class="ecs-table" v-if="data.is_true && (data.variables.length || data.has_this)">
+        <template v-if="data.is_true && (data.variables.length || data.has_this)">
           <table>
             <thead>
               <tr>
@@ -33,15 +33,11 @@ Vue.component('tables', {
               </template>
             </tbody>
           </table>
-        </div>
-        <div v-else>
-          <p v-if="data.is_true">
-            Yes
-          </p>
-          <p v-else>
-            No
-          </p>  
-        </div>
+        </template>
+        <template v-else>
+          <span v-if="data.is_true">Yes</span>
+          <span v-else>No</span>
+        </template>
       </div>
       `
   });
