@@ -33,6 +33,10 @@ char *eval_query(
         bool is_true = false;
         bool has_this = false;
 
+        char *str = ecs_rule_str(r);
+        printf("%s\n", str);
+        ecs_os_free(str);
+
         ecs_strbuf_list_appendstr(&reply, "\"valid\": true");
 
         /* List variable names */

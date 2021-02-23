@@ -1,4 +1,3 @@
-
 Transitive(IsA)
 
 IsA(Movie, Thing)
@@ -9,19 +8,27 @@ IsA(Actor, Person)
 IsA(Character, Person)
 
 IsA(CelestialBody, Thing)
-
+IsA(CelestialBody, Location)
+IsA(Galaxy, CelestialBody)
 IsA(Planet, CelestialBody)
 IsA(Moon, CelestialBody)
-
-IsA(CelestialBody, Location)
-IsA(SpaceStation, Location)
 
 IsA(Machine, Thing)
 
 IsA(Vehicle, Machine)
 IsA(Transport, Vehicle)
+IsA(Transport, Container)
 IsA(SpaceShip, Transport)
+IsA(Speeder, Transport)
 IsA(Walker, Transport)
+
+IsA(SpaceStation, Machine)
+IsA(SpaceStation, Location)
+IsA(SpaceStation, Container)
+
+IsA(Droid, Machine)
+IsA(ProtocolDroid, Droid)
+IsA(BattleDroid, Droid)
 
 IsA(Animal, Thing)
 IsA(Creature, Animal)
@@ -41,11 +48,8 @@ IsA(Soldier, Occupation)
 IsA(StormTrooper, Soldier)
 IsA(Pilot, Occupation)
 
-IsA(Droid, Machine)
-IsA(ProtocolDroid, Droid)
-
 (IsA, SpaceShip) {
-  CorellianLightFreigher
+  CorellianLightFreighter
   (Faction, Rebellion) {
     XWing
     YWing
@@ -101,7 +105,7 @@ IsA(ProtocolDroid, Droid)
   Droid
 }
 
-(CorellianLightFreigher) {
+(CorellianLightFreighter) {
   (Faction, Rebellion) {
     MilleniumFalcon
   }
