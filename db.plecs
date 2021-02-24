@@ -35,6 +35,8 @@ IsA(Creature, Animal)
 IsA(Wookie, Creature)
 IsA(Ewok, Creature)
 IsA(Human, Animal)
+IsA(Cyborg, Human)
+IsA(Cyborg, Machine)
 
 IsA(Male, Gender)
 IsA(Female, Gender)
@@ -103,6 +105,7 @@ IsA(Pilot, Occupation)
 (Sentient) {
   Human
   Droid
+  Wookie
 }
 
 (CorellianLightFreighter) {
@@ -220,12 +223,16 @@ IsA(Pilot, Occupation)
 (Droid) {
   R2D2
   BB8
+}
+
+(ProtocolDroid) {
   (Male) {
-    (ProtocolDroid) {
-      C3PO
-    }
-    Grievous
+    C3PO
   }
+}
+
+(Cyborg) {
+  Grievous
 }
 
 (Creature) {
@@ -238,7 +245,9 @@ IsA(Pilot, Occupation)
 }
 
 (Wookie) {
-  Chewbacca
+  (Male) {
+    Chewbacca
+  }
 }
 
 (Jedi) {
