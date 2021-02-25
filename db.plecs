@@ -1,5 +1,3 @@
-Transitive(IsA)
-
 IsA(Movie, Thing)
 
 IsA(Person, Thing)

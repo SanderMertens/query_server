@@ -52,6 +52,10 @@ char *eval_query(
                 continue;
             }
             const char *var_name = ecs_rule_variable_name(r, i);
+            if (var_name[0] == '_') {
+                continue;
+            }
+
             ecs_strbuf_list_append(&reply, "\"%s\"", var_name);
         }
 
@@ -79,6 +83,10 @@ char *eval_query(
                 if (!ecs_rule_variable_is_entity(r, i)) {
                     continue;
                 }
+                const char *var_name = ecs_rule_variable_name(r, i);
+                if (var_name[0] == '_') {
+                    continue;
+                }                
                 ecs_entity_t var = ecs_rule_variable(&it, i);
                 const char *var_value = ecs_get_name(world, var);
                 ecs_strbuf_list_append(&reply, "\"%s\"", var_value);
