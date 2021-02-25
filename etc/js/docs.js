@@ -41,9 +41,6 @@ Vue.component('docs', {
             Friends(X, Y) <span class="code-comment">// store all friends in 'X' and 'Y'</span><br/>
             Jedi(Luke) <span class="code-comment">// return true if Luke is a Jedi</span><br/>
         </p>
-        <p>
-            Here is a <a href="https://github.com/SanderMertens/query_server" target="blank">link to the project.</a>
-        </p>
       </div>
       `
   });
