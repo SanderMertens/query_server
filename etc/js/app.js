@@ -59,7 +59,7 @@ var app = new Vue({
   },
 
   data: {
-    host: window.location.host,
+    host: window.location.href,
     query: "",
     query_ok: "",
     error: false,
@@ -67,4 +67,3 @@ var app = new Vue({
     entity: undefined
   }
 });
-
