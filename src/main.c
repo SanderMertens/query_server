@@ -187,7 +187,7 @@ int main(int argc, char *argv[]) {
     }  
 
     // Create HTTP server
-    ecs_entity_t server = ecs_set(world, 0, EcsHttpServer, {.port = 80});
+    ecs_entity_t server = ecs_set(world, 0, EcsHttpServer, {.port = 9000});
           ecs_entity_t e_query = ecs_new_w_entity(world, ECS_CHILDOF | server);
             ecs_set(world, e_query, EcsName, {"e_query"});
             ecs_set(world, e_query, EcsHttpEndpoint, {
