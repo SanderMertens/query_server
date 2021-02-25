@@ -33,7 +33,7 @@ var app = new Vue({
       }
 
       host = this.host;
-      let url = "http://" + this.host + "/query";
+      let url = this.host + "query";
       if (this.query && this.query.length) {
         url += "?expr=" + encodeURIComponent(this.query);
       }
