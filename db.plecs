@@ -10,6 +10,7 @@ IsA(CelestialBody, Location)
 IsA(Galaxy, CelestialBody)
 IsA(Planet, CelestialBody)
 IsA(Moon, CelestialBody)
+IsA(Moon, Satellite)
 
 IsA(Machine, Thing)
 
@@ -23,6 +24,7 @@ IsA(Walker, Transport)
 IsA(SpaceStation, Machine)
 IsA(SpaceStation, Location)
 IsA(SpaceStation, Container)
+IsA(SpaceStation, Satellite)
 
 IsA(Droid, Machine)
 IsA(ProtocolDroid, Droid)
