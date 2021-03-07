@@ -93,8 +93,26 @@ div.error {
   width: 100%;
 }
 
-span.error {
+div.error span {
   color: #B5494B;
+}
+
+div.info {
+  position: relative;
+  top: -30px;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,1.0);
+  background-color: #000;
+  max-width: 80%;  
+}
+
+div.info span {
+  color: #fff;
+}
+
+span.prompt {
+  color: #47B576 !important;
 }
 
 div.docs {
@@ -117,13 +135,37 @@ span.code-comment {
   font-style: italic;
 }
 
+div.ecs-yes {
+  color: #47B576;
+}
+
+div.ecs-no {
+  color: #B5494B; 
+}
+
+div.ecs-yesno {
+  position: relative;
+  top: -30px;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,1.0);
+  background-color: #000;
+  max-width: 80%;  
+}
+
+div.ecs-results {
+  position: relative;
+  margin: auto;
+}
+
 div.ecs-table {
   position: relative;
   margin: auto;
   padding: 15px;
   box-shadow: 0px 5px 20px rgba(0,0,0,1.0);
-  max-width: 800px;
   background-color: #000;
+  overflow-x: auto;
+  max-width: 80%;
 }
 
 div.ecs-table ecs-value {
@@ -166,6 +208,25 @@ table th {
   color: #47B576;
 }
 
+th.ecs-table-term {
+  color: #FFE100;
+}
+
+th.ecs-table-squeeze {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  min-width: 0px;
+}
+
+td.ecs-table-squeeze {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  min-width: 0px;
+}
+
+
 table tr {
   height: 45px;
 }
@@ -173,11 +234,10 @@ table tr {
 table td {
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-right: 20px;
+  padding-right: 40px;
   border-top-color: #212834;
   border-top-style: solid;
   border-top-width: 1px;
   font-size: inherit;
-  min-width: 75px;
-  max-width: 150px;
+  min-width: 100px;
 }

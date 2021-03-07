@@ -21,6 +21,7 @@
         <example v-on:clicked="example_clicked"></example>
       </div>
       <div class="result-box">
+        <info ref = "info" :data="data"></info>
         <error :data="data"></error>
         <docs :data="data"></docs>
         <tables :data="data" :query="query_ok"></tables>
@@ -29,6 +30,7 @@
 
     <script src="query_demo/js/vue.js"></script>
     <script src="query_demo/js/tables.js"></script>
+    <script src="query_demo/js/info.js"></script>
     <script src="query_demo/js/error.js"></script>
     <script src="query_demo/js/query.js"></script>
     <script src="query_demo/js/example.js"></script>

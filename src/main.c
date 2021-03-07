@@ -34,7 +34,9 @@ char *eval_query(
         bool has_this = false;
 
         char *str = ecs_rule_str(r);
-        printf("%s\n", str);
+        printf("%s\n", expr);
+        printf("------------------------\n");
+        printf("%s\n\n", str);
         ecs_os_free(str);
 
         ecs_strbuf_list_appendstr(&reply, "\"valid\": true");
@@ -67,6 +69,9 @@ char *eval_query(
             ecs_strbuf_list_appendstr(&reply, "\"has_this\": false");
         }
 
+        ecs_strbuf_list_append(&reply, "\"term_count\": %d", 
+            ecs_rule_term_count(r));
+
         ecs_strbuf_list_appendstr(&reply, "\"results\":");
         ecs_strbuf_list_push(&reply, "[", ",");
 
@@ -75,6 +80,20 @@ char *eval_query(
             /* Begin result */
             ecs_strbuf_list_next(&reply);
             ecs_strbuf_list_push(&reply, "{", ",");
+
+            /* Output terms */
+            ecs_strbuf_list_appendstr(&reply, "\"terms\":");
+            ecs_strbuf_list_push(&reply, "[", ",");
+
+            int32_t column_count = it.column_count;
+            for (int i = 0; i < column_count; i ++) {
+                char buff[512];
+
+                ecs_entity_str(world, ecs_column_entity(&it, i + 1), buff, 512);
+                ecs_strbuf_list_append(&reply, "\"%s\"", buff);
+            }
+
+            ecs_strbuf_list_pop(&reply, "]");
 
             /* Output variables */
             ecs_strbuf_list_appendstr(&reply, "\"variables\":");

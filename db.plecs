@@ -1,3 +1,10 @@
+IsA(Loves, Likes)
+
+Final(Family)
+Final(Parent)
+Final(Faction)
+Final(AppearsOn)
+
 IsA(Movie, Thing)
 
 IsA(Person, Thing)
@@ -12,7 +19,14 @@ IsA(Planet, CelestialBody)
 IsA(Moon, CelestialBody)
 IsA(Moon, Satellite)
 
+IsA(DesertPlanet, Planet)
+IsA(OceanPlanet, Planet)
+IsA(JunglePlanet, Planet)
+IsA(IcePlanet, Planet)
+
 IsA(Machine, Thing)
+IsA(SentientMachine, Machine)
+IsA(SentientMachine, Sentient)
 
 IsA(Vehicle, Machine)
 IsA(Transport, Vehicle)
@@ -26,20 +40,24 @@ IsA(SpaceStation, Location)
 IsA(SpaceStation, Container)
 IsA(SpaceStation, Satellite)
 
-IsA(Droid, Machine)
+IsA(Droid, SentientMachine)
 IsA(ProtocolDroid, Droid)
 IsA(BattleDroid, Droid)
 
 IsA(Animal, Thing)
 IsA(Creature, Animal)
-IsA(Wookie, Creature)
-IsA(Ewok, Creature)
+IsA(SentientCreature, Creature)
+IsA(SentientCreature, Sentient)
+IsA(Wookie, SentientCreature)
+IsA(Ewok, SentientCreature)
 IsA(Human, Animal)
+IsA(Human, Sentient)
 IsA(Cyborg, Human)
-IsA(Cyborg, Machine)
+IsA(Cyborg, SentientMachine)
 
-IsA(Male, Gender)
-IsA(Female, Gender)
+Gender(Male)
+Gender(Female)
+Gender(NonBinary)
 
 IsA(Rebellion, Faction)
 IsA(FirstOrder, Faction)
@@ -84,28 +102,34 @@ IsA(Pilot, Occupation)
   TheRiseOfSkywalker
 }
 
-(Planet) {
+(DesertPlanet) {
   Tatooine
-  Coruscant
+}
+
+(OceanPlanet) {
+  Kamino
+}
+
+(JunglePlanet) {
   Dagobah
+}
+
+(IcePlanet) {
+  Hoth
+}
+
+(Planet) {
+  Coruscant
   Mustafar
   Alderaan
-  Hoth
   Naboo
   Kashyyyk
-  Kamino
   Bespin
   Exegol
 }
 
 (Moon) {
   Endor
-}
-
-(Sentient) {
-  Human
-  Droid
-  Wookie
 }
 
 (CorellianLightFreighter) {
@@ -175,7 +199,6 @@ IsA(Pilot, Occupation)
       Dooku
       Snoke
       DarthSidious
-      DarthVader
       DarthMaul
       Hux
       Finn
@@ -233,9 +256,10 @@ IsA(Pilot, Occupation)
 
 (Cyborg) {
   Grievous
+  DarthVader
 }
 
-(Creature) {
+(SentientCreature) {
   (Male) {
     Yoda
     (Family, Hutt) {
@@ -269,37 +293,130 @@ IsA(Pilot, Occupation)
   Snoke
 }
 
-(Likes, Han) {
+
+
+(Loves, Han) {
   Leia
 }
 
-(Likes, Leia) {
+(Loves, Leia) {
   Han
 }
 
-(Likes, Finn) {
+(Loves, Finn) {
   Rose
 }
 
-(Likes, Rey) {
+(Loves, Rey) {
   Finn
 }
 
-(Likes, Anakin) {
+(Loves, Anakin) {
+  Padme
+}
+
+(Loves, Padme) {
+  Anakin
+}
+
+(Loves, Ben) {
+  Rey
+}
+
+(Loves, Rey) {
+  Ben
+}
+
+
+
+(Likes, Luke) {
+  Leia
+  Han
+  Chewbacca
+  Rey
+  ObiWan
+}
+
+(Likes, Leia) {
+  Luke
+  Chewbacca
+  Amilyn
+}
+
+(Likes, Han) {
+  Luke
+  Rey
+  Chewbacca
+}
+
+(Likes, Chewbacca) {
+  Luke
+  Rey
+  Han
+  Leia
+}
+
+(Likes, ObiWan) {
+  QuiGon
+  Anakin
+  Luke
+  Padme
+}
+
+(Likes, QuiGon) {
+  ObiWan
+  Anakin
   Padme
 }
 
 (Likes, Padme) {
-  Anakin
-}
-
-(Likes, Ben) {
-  Rey
+  ObiWan
 }
 
 (Likes, Rey) {
-  Ben
+  Luke
+  Han
+  Chewbacca
+  BB8
 }
+
+(Likes, Finn) {
+  Rey
+  Poe
+  BB8
+}
+
+(Likes, Rose) {
+  Finn
+}
+
+(Likes, Amilyn) {
+  Leia
+}
+
+(Likes, Poe) {
+  Rey
+  Finn
+  BB8
+}
+
+(Likes, R2D2) {
+  C3PO
+  Luke
+}
+
+(Likes, C3PO) {
+  R2D2
+  Luke
+}
+
+(Likes, BB8) {
+  Rey
+  Finn
+  Poe
+}
+
+
 
 (Parent, Shmi) {
   Anakin
@@ -427,32 +544,6 @@ Kills(ObiWan, DarthMaul)
 Kills(DarthMaul, QuiGon)
 Kills(Rey, DarthSidious)
 
-Friends(ObiWan, Anakin)
-Friends(Anakin, ObiWan)
-Friends(ObiWan, QuiGon)
-Friends(QuiGon, ObiWan)
-Friends(Luke, Han)
-Friends(Han, Luke)
-Friends(Han, Chewbacca)
-Friends(Chewbacca, Han)
-Friends(R2D2, Luke)
-Friends(Luke, R2D2)
-Friends(R2D2, ObiWan)
-Friends(ObiWan, R2D2)
-Friends(R2D2, C3PO)
-Friends(C3PO, R2D2)
-Friends(Rey, Finn)
-Friends(Finn, Rey)
-Friends(Poe, Finn)
-Friends(Finn, Poe)
-Friends(Rey, BB8)
-Friends(BB8, Rey)
-Friends(Poe, BB8)
-Friends(BB8, Poe)
-Friends(Leia, Holdo)
-Friends(Holdo, Leia)
-Friends(Anakin, Sheev)
-Friends(Sheev, Anakin)
 
 (AppearsOn, ANewHope) {
   Luke

@@ -25,6 +25,10 @@ var app = new Vue({
   methods: {
     query_on_changed(e) {
       this.query = e.query;
+      
+      if (!this.example) {
+        this.$refs.info.set_info("");
+      }
 
       if (!this.query || !this.query.length) {
         this.data = undefined;
@@ -54,7 +58,10 @@ var app = new Vue({
     },
 
     example_clicked(e) {
-      this.$refs.query.set_query(e);
+      this.example = true;
+      this.$refs.query.set_query(e.q);
+      this.$refs.info.set_info(e.desc);
+      this.example = false;
     }
   },
 
@@ -64,6 +71,7 @@ var app = new Vue({
     query_ok: "",
     error: false,
     data: undefined,
-    entity: undefined
+    entity: undefined,
+    is_example: false
   }
 });
